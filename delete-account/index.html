@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PredIIQ Account Deletion Request</title>
+  <style>
+    :root {
+      --bg: #070b16;
+      --card: #101827;
+      --green: #22c55e;
+      --text: #f8fafc;
+      --muted: #aeb7c8;
+      --border: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(34,197,94,0.16), transparent 35%),
+        linear-gradient(135deg, #070b16 0%, #0b1020 55%, #030712 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .brand-logo {
+      width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    .badge {
+      border: 1px solid rgba(34,197,94,0.35);
+      background: rgba(34,197,94,0.10);
+      color: #b7f7ca;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(16, 24, 39, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+      padding: 34px;
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .email-box {
+      margin-top: 26px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+    }
+
+    .email-label {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .email {
+      color: var(--green);
+      font-size: 22px;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .side {
+      background: linear-gradient(180deg, rgba(34,197,94,0.16), rgba(255,255,255,0.04));
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .num {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06110a;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .section { margin-top: 24px; }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: -0.4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .mini {
+      background: rgba(21,31,51,0.8);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .mini h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 34px;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+
+      .header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .card {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .brand-logo {
+        width: 130px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <div class="brand">
+        <img class="brand-logo" src="../logo.png" alt="PredIIQ Logo">
+      </div>
+      <div class="badge">Account & Data Deletion</div>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Account Deletion Request</h1>
+        <p class="subtitle">
+          PredIIQ gives users a clear way to request deletion of their account and associated app data.
+          To begin, send an email using the details below.
+        </p>
+
+        <div class="email-box">
+          <div class="email-label">Send your request to</div>
+          <div class="email">
+            <a href="mailto:tech@prediiq.com?subject=Delete%20My%20Account">tech@prediiq.com</a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Required email subject</h2>
+          <p class="subtitle"><strong>Delete My Account</strong></p>
+        </div>
+
+        <div class="section">
+          <h2>What to include</h2>
+          <p class="subtitle">Please include your PredIIQ account email address so we can locate and process your request.</p>
+        </div>
+      </div>
+
+      <div class="card side">
+        <h2>How it works</h2>
+        <div class="step">
+          <div class="num">1</div>
+          <div>Email us at <strong>tech@prediiq.com</strong>.</div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>Use the subject line <strong>Delete My Account</strong>.</div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>Include your PredIIQ account email address.</div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div>Requests are processed within <strong>48 hours</strong>.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="mini">
+        <h3>Data deleted</h3>
+        <ul>
+          <li>Account email</li>
+          <li>User profile</li>
+          <li>Profile picture</li>
+          <li>Subscription/trial profile data</li>
+          <li>App account data stored in Firebase</li>
+        </ul>
+      </div>
+
+      <div class="mini">
+        <h3>Data retained</h3>
+        <ul>
+          <li>Payment records handled by Google Play or Apple may be retained according to their policies.</li>
+          <li>Legal or security records may be retained only if required by law.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © PredIIQ. Predict Better. Win Different.
+    </footer>
+  </main>
+</body>
+</html>
