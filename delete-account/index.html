@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PredIIQ Account Deletion Request</title>
+
   <style>
     :root {
       --bg: #070b16;
       --card: #101827;
+      --card2: #151f33;
       --green: #22c55e;
       --text: #f8fafc;
       --muted: #aeb7c8;
@@ -50,7 +52,6 @@
     .brand-logo {
       width: 150px;
       height: auto;
-      display: block;
     }
 
     .badge {
@@ -113,7 +114,6 @@
       color: var(--green);
       font-size: 22px;
       font-weight: 800;
-      word-break: break-word;
     }
 
     .side {
@@ -131,7 +131,6 @@
     .num {
       width: 32px;
       height: 32px;
-      min-width: 32px;
       border-radius: 50%;
       background: var(--green);
       color: #06110a;
@@ -140,12 +139,13 @@
       font-weight: 900;
     }
 
-    .section { margin-top: 24px; }
+    .section {
+      margin-top: 24px;
+    }
 
     .section h2 {
       margin: 0 0 14px;
       font-size: 24px;
-      letter-spacing: -0.4px;
     }
 
     .grid {
@@ -160,11 +160,6 @@
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 22px;
-    }
-
-    .mini h3 {
-      margin: 0 0 12px;
-      font-size: 18px;
     }
 
     ul {
@@ -187,29 +182,27 @@
     }
 
     @media (max-width: 760px) {
-      .hero, .grid { grid-template-columns: 1fr; }
+      .hero, .grid {
+        grid-template-columns: 1fr;
+      }
 
       .header {
-        align-items: flex-start;
         flex-direction: column;
       }
 
-      .card {
-        padding: 24px;
-        border-radius: 22px;
-      }
-
       .brand-logo {
-        width: 130px;
+        width: 120px;
       }
     }
   </style>
 </head>
+
 <body>
   <main class="wrap">
+
     <header class="header">
       <div class="brand">
-        <img class="brand-logo" src="../logo.png" alt="PredIIQ Logo">
+        <img src="../logo.png" class="brand-logo" alt="PredIIQ Logo">
       </div>
       <div class="badge">Account & Data Deletion</div>
     </header>
@@ -217,46 +210,57 @@
     <section class="hero">
       <div class="card">
         <h1>Account Deletion Request</h1>
+
         <p class="subtitle">
-          PredIIQ gives users a clear way to request deletion of their account and associated app data.
-          To begin, send an email using the details below.
+          You can request deletion of your PredIIQ account or specific data by contacting us.
         </p>
 
         <div class="email-box">
           <div class="email-label">Send your request to</div>
           <div class="email">
-            <a href="mailto:tech@prediiq.com?subject=Delete%20My%20Account">tech@prediiq.com</a>
+            <a href="mailto:tech@prediiq.com">tech@prediiq.com</a>
           </div>
         </div>
 
         <div class="section">
-          <h2>Required email subject</h2>
-          <p class="subtitle"><strong>Delete My Account</strong></p>
+          <h2>Email Subject</h2>
+          <p class="subtitle">
+            <strong>Delete My Account</strong> → deletes your full account<br>
+            <strong>Delete My Data</strong> → deletes data only (account remains active)
+          </p>
         </div>
 
         <div class="section">
           <h2>What to include</h2>
-          <p class="subtitle">Please include your PredIIQ account email address so we can locate and process your request.</p>
+          <p class="subtitle">
+            Your PredIIQ account email address so we can process your request.
+          </p>
         </div>
       </div>
 
       <div class="card side">
         <h2>How it works</h2>
+
         <div class="step">
           <div class="num">1</div>
-          <div>Email us at <strong>tech@prediiq.com</strong>.</div>
+          <div>Email <strong>tech@prediiq.com</strong></div>
         </div>
+
         <div class="step">
           <div class="num">2</div>
-          <div>Use the subject line <strong>Delete My Account</strong>.</div>
+          <div>Choose subject:
+            <br><strong>Delete My Account</strong> or <strong>Delete My Data</strong>
+          </div>
         </div>
+
         <div class="step">
           <div class="num">3</div>
-          <div>Include your PredIIQ account email address.</div>
+          <div>Include your account email</div>
         </div>
+
         <div class="step">
           <div class="num">4</div>
-          <div>Requests are processed within <strong>48 hours</strong>.</div>
+          <div>Processed within <strong>48 hours</strong></div>
         </div>
       </div>
     </section>
@@ -268,16 +272,16 @@
           <li>Account email</li>
           <li>User profile</li>
           <li>Profile picture</li>
-          <li>Subscription/trial profile data</li>
-          <li>App account data stored in Firebase</li>
+          <li>Subscription/trial data</li>
+          <li>Firebase stored data</li>
         </ul>
       </div>
 
       <div class="mini">
         <h3>Data retained</h3>
         <ul>
-          <li>Payment records handled by Google Play or Apple may be retained according to their policies.</li>
-          <li>Legal or security records may be retained only if required by law.</li>
+          <li>Payment records (Google Play / Apple)</li>
+          <li>Legal/security records if required</li>
         </ul>
       </div>
     </section>
@@ -285,6 +289,7 @@
     <footer class="footer">
       © PredIIQ. Predict Better. Win Different.
     </footer>
+
   </main>
 </body>
 </html>
