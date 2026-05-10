@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PredIIQ Contact Us</title>
+
+  <style>
+    :root {
+      --bg: #070b16;
+      --card: #101827;
+      --card2: #151f33;
+      --green: #22c55e;
+      --text: #f8fafc;
+      --muted: #aeb7c8;
+      --border: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(34,197,94,0.16), transparent 35%),
+        linear-gradient(135deg, #070b16 0%, #0b1020 55%, #030712 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .brand-logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .badge {
+      border: 1px solid rgba(34,197,94,0.35);
+      background: rgba(34,197,94,0.10);
+      color: #b7f7ca;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(16, 24, 39, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+      padding: 34px;
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .email-box {
+      margin-top: 26px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+    }
+
+    .email-label {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .email {
+      color: var(--green);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .side {
+      background: linear-gradient(180deg, rgba(34,197,94,0.16), rgba(255,255,255,0.04));
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06110a;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .mini {
+      background: rgba(21,31,51,0.8);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 34px;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero, .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header {
+        flex-direction: column;
+      }
+
+      .brand-logo {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <header class="header">
+      <div class="brand">
+        <img src="../logo.png" class="brand-logo" alt="PredIIQ Logo">
+      </div>
+      <div class="badge">Contact Us</div>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Get in Touch</h1>
+
+        <p class="subtitle">
+          Have questions, feedback, or need support? Reach out to our team and we’ll respond promptly.
+        </p>
+
+        <div class="email-box">
+          <div class="email-label">Email</div>
+          <div class="email">
+            <a href="mailto:support@prediiq.com">support@prediiq.com</a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Other Methods</h2>
+          <p class="subtitle">
+            You can also reach us via social media:
+          </p>
+          <ul>
+            <li><a href="https://twitter.com/prediiq" target="_blank">Twitter</a></li>
+            <li><a href="https://instagram.com/prediiq" target="_blank">Instagram</a></li>
+            <li><a href="https://facebook.com/prediiq" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card side">
+        <h2>How to Contact</h2>
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>Send an email to <strong>support@prediiq.com</strong></div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>Include your account email (if applicable)</div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>Describe your question or feedback clearly</div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>We’ll respond within <strong>24–48 hours</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="mini">
+        <h3>Support Topics</h3>
+        <ul>
+          <li>Account Issues</li>
+          <li>App Bugs</li>
+          <li>Payment & Subscription</li>
+          <li>Feature Requests</li>
+        </ul>
+      </div>
+
+      <div class="mini">
+        <h3>What We Can’t Handle</h3>
+        <ul>
+          <li>Third-party app issues</li>
+          <li>Legal advice</li>
+          <li>Refunds outside official stores</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © PredIIQ. Predict Better. Win Different.
+    </footer>
+
+  </main>
+</body>
+</html>
