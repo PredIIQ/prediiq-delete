@@ -20,14 +20,17 @@
       --muted: #aeb7c8;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      background: radial-gradient(circle at top, rgba(124,58,237,0.2), transparent 40%),
-                  radial-gradient(circle at bottom, rgba(34,197,94,0.15), transparent 40%),
-                  var(--bg);
+      background:
+        radial-gradient(circle at top, rgba(124,58,237,0.2), transparent 40%),
+        radial-gradient(circle at bottom, rgba(34,197,94,0.15), transparent 40%),
+        var(--bg);
       color: var(--text);
       display: flex;
       align-items: center;
@@ -41,7 +44,7 @@
     }
 
     .logo {
-      width: 520px; /* BIGGER LOGO */
+      width: 520px;
       max-width: 95%;
       margin-bottom: 40px;
     }
@@ -59,6 +62,9 @@
       font-weight: 800;
       font-size: 16px;
       transition: 0.2s ease;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
     }
 
     .android {
@@ -91,24 +97,19 @@
       color: white;
     }
 
-    @media (max-width: 600px) {
-      .logo {
-        width: 320px;
-      }
-    }
+    /* PREMIUM ANDROID COMING SOON MODAL */
 
-    /* PREMIUM ANDROID COMING SOON REVEAL */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      z-index: 1000;
+      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: rgba(3, 6, 16, 0.76);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(2, 6, 15, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -119,25 +120,33 @@
       visibility: visible;
     }
 
-    .modal-card {
+    .modal {
       position: relative;
       width: 100%;
       max-width: 420px;
-      padding: 48px 30px 38px;
-      border: 1px solid rgba(34, 197, 94, 0.28);
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at top, rgba(34,197,94,0.14), transparent 65%),
-        linear-gradient(145deg, #111a2e, #080d19);
-      box-shadow:
-        0 25px 80px rgba(0,0,0,0.55),
-        0 0 50px rgba(34,197,94,0.08);
+      padding: 48px 32px 36px;
       text-align: center;
-      transform: translateY(25px) scale(0.95);
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border-radius: 28px;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(34, 197, 94, 0.18),
+          transparent 65%
+        ),
+        linear-gradient(
+          160deg,
+          rgba(15, 23, 42, 0.98),
+          rgba(7, 11, 22, 0.98)
+        );
+      box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        0 0 45px rgba(34, 197, 94, 0.08);
+      transform: translateY(25px) scale(0.96);
+      transition: transform 0.35s ease;
     }
 
-    .modal-overlay.active .modal-card {
+    .modal-overlay.active .modal {
       transform: translateY(0) scale(1);
     }
 
@@ -145,74 +154,78 @@
       position: absolute;
       top: 18px;
       right: 20px;
-      border: none;
-      background: rgba(255,255,255,0.07);
-      color: #cbd5e1;
       width: 34px;
       height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
       border-radius: 50%;
-      font-size: 23px;
+      background: rgba(148, 163, 184, 0.15);
+      color: #cbd5e1;
+      font-size: 24px;
       cursor: pointer;
       transition: 0.2s ease;
     }
 
     .modal-close:hover {
-      background: rgba(255,255,255,0.15);
+      background: rgba(148, 163, 184, 0.25);
       color: white;
     }
 
-    .android-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 28px;
-      border-radius: 25px;
-      background: linear-gradient(145deg, #173e2b, #10241d);
-      border: 1px solid rgba(34,197,94,0.35);
-      box-shadow: 0 0 35px rgba(34,197,94,0.16);
-      font-size: 43px;
-    }
-
-    .coming-label {
+    .release-badge {
       display: inline-block;
-      margin-bottom: 14px;
-      padding: 7px 15px;
-      border-radius: 30px;
-      background: rgba(34,197,94,0.11);
-      border: 1px solid rgba(34,197,94,0.25);
+      padding: 7px 16px;
+      margin-bottom: 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      background: rgba(34, 197, 94, 0.12);
       color: #4ade80;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 2px;
     }
 
-    .modal-title {
+    .modal h2 {
       margin: 0 0 14px;
-      font-size: 32px;
-      font-weight: 850;
-      letter-spacing: -1px;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #f8fafc;
     }
 
     .modal-description {
-      margin: 0 auto;
-      max-width: 310px;
+      margin: 0;
       color: #aeb7c8;
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    .modal-footer {
-      margin-top: 30px;
+    .modal-tagline {
+      margin-top: 32px;
       color: #64748b;
       font-size: 12px;
       letter-spacing: 1px;
     }
 
+    @media (max-width: 600px) {
+      .logo {
+        width: 320px;
+      }
+
+      .modal {
+        padding: 48px 24px 32px;
+      }
+
+      .modal h2 {
+        font-size: 30px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .modal-overlay,
-      .modal-card {
+      .modal,
+      .btn {
         transition: none;
       }
     }
@@ -228,69 +241,118 @@
 
     <!-- DOWNLOAD BUTTONS -->
     <div class="buttons">
-      <a href="#" class="btn android" id="androidDownload">Download Android</a>
-      <a href="https://apps.apple.com/us/app/prediiq/id6765726510" class="btn ios">Download iOS</a>
+
+      <button
+        type="button"
+        class="btn android"
+        onclick="openAndroidModal()"
+      >
+        Download Android
+      </button>
+
+      <a
+        href="https://apps.apple.com/us/app/prediiq/id6765726510"
+        class="btn ios"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download iOS
+      </a>
+
     </div>
 
     <!-- LINKS -->
     <div class="links">
       <a href="/privacy-policy/">Privacy Policy</a>
       <a href="/delete-account/">Delete Account</a>
-      <a href="/contact-us/">Contact Us</a> <!-- NEW CONTACT LINK -->
+      <a href="/contact-us/">Contact Us</a>
     </div>
 
   </div>
 
-  <!-- PREMIUM COMING SOON MODAL -->
-  <div class="modal-overlay" id="androidModal">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <!-- PREMIUM ANDROID COMING SOON POPUP -->
+  <div
+    id="androidModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="androidModalTitle"
+    aria-hidden="true"
+    onclick="closeAndroidModal(event)"
+  >
 
-      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+    <div class="modal">
 
-      <div class="android-icon" aria-hidden="true">🤖</div>
+      <button
+        type="button"
+        class="modal-close"
+        aria-label="Close"
+        onclick="closeAndroidModal()"
+      >
+        &times;
+      </button>
 
-      <div class="coming-label">ANDROID RELEASE</div>
+      <div class="release-badge">
+        ANDROID RELEASE
+      </div>
 
-      <h2 class="modal-title" id="modalTitle">Coming Soon</h2>
+      <h2 id="androidModalTitle">
+        Coming Soon
+      </h2>
 
       <p class="modal-description">
-        PredIIQ for Android is on its way.
-        Stay tuned for the official Google Play launch.
+        PredIIQ for Android is on its way. Stay tuned
+        for the official Google Play launch.
       </p>
 
-      <div class="modal-footer">PREDIIQ · PREDICT BETTER. WIN DIFFERENT.</div>
+      <div class="modal-tagline">
+        PREDIIQ · PREDICT BETTER. WIN DIFFERENT.
+      </div>
 
     </div>
+
   </div>
 
   <script>
-    const androidButton = document.getElementById('androidDownload');
-    const modal = document.getElementById('androidModal');
-    const closeButton = document.getElementById('closeModal');
+    const androidModal = document.getElementById("androidModal");
+    const androidCloseButton = androidModal.querySelector(".modal-close");
 
-    function openAndroidModal(event) {
-      event.preventDefault();
-      modal.classList.add('active');
-      closeButton.focus();
+    let previousFocus = null;
+
+    function openAndroidModal() {
+      previousFocus = document.activeElement;
+      androidModal.classList.add("active");
+      androidModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      androidCloseButton.focus();
     }
 
-    function closeAndroidModal() {
-      modal.classList.remove('active');
-      androidButton.focus();
+    function closeAndroidModal(event) {
+      if (event && event.target !== androidModal) {
+        return;
+      }
+
+      androidModal.classList.remove("active");
+      androidModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      if (previousFocus) {
+        previousFocus.focus();
+      }
     }
 
-    androidButton.addEventListener('click', openAndroidModal);
-    closeButton.addEventListener('click', closeAndroidModal);
+    document.addEventListener("keydown", function(event) {
+      if (!androidModal.classList.contains("active")) {
+        return;
+      }
 
-    modal.addEventListener('click', function(event) {
-      if (event.target === modal) {
+      if (event.key === "Escape") {
         closeAndroidModal();
       }
-    });
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && modal.classList.contains('active')) {
-        closeAndroidModal();
+      if (event.key === "Tab") {
+        event.preventDefault();
+        androidCloseButton.focus();
       }
     });
   </script>
