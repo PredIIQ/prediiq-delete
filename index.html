@@ -96,6 +96,126 @@
         width: 320px;
       }
     }
+
+    /* PREMIUM ANDROID COMING SOON REVEAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(3, 6, 16, 0.76);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      padding: 48px 30px 38px;
+      border: 1px solid rgba(34, 197, 94, 0.28);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top, rgba(34,197,94,0.14), transparent 65%),
+        linear-gradient(145deg, #111a2e, #080d19);
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.55),
+        0 0 50px rgba(34,197,94,0.08);
+      text-align: center;
+      transform: translateY(25px) scale(0.95);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      border: none;
+      background: rgba(255,255,255,0.07);
+      color: #cbd5e1;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 23px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .modal-close:hover {
+      background: rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    .android-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 28px;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #173e2b, #10241d);
+      border: 1px solid rgba(34,197,94,0.35);
+      box-shadow: 0 0 35px rgba(34,197,94,0.16);
+      font-size: 43px;
+    }
+
+    .coming-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 15px;
+      border-radius: 30px;
+      background: rgba(34,197,94,0.11);
+      border: 1px solid rgba(34,197,94,0.25);
+      color: #4ade80;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .modal-title {
+      margin: 0 0 14px;
+      font-size: 32px;
+      font-weight: 850;
+      letter-spacing: -1px;
+    }
+
+    .modal-description {
+      margin: 0 auto;
+      max-width: 310px;
+      color: #aeb7c8;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .modal-footer {
+      margin-top: 30px;
+      color: #64748b;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .modal-overlay,
+      .modal-card {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -108,7 +228,7 @@
 
     <!-- DOWNLOAD BUTTONS -->
     <div class="buttons">
-      <a href="#" class="btn android" onclick="alert('Coming Soon!'); return false;">Download Android</a>
+      <a href="#" class="btn android" id="androidDownload">Download Android</a>
       <a href="https://apps.apple.com/us/app/prediiq/id6765726510" class="btn ios">Download iOS</a>
     </div>
 
@@ -120,6 +240,60 @@
     </div>
 
   </div>
+
+  <!-- PREMIUM COMING SOON MODAL -->
+  <div class="modal-overlay" id="androidModal">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+
+      <div class="android-icon" aria-hidden="true">🤖</div>
+
+      <div class="coming-label">ANDROID RELEASE</div>
+
+      <h2 class="modal-title" id="modalTitle">Coming Soon</h2>
+
+      <p class="modal-description">
+        PredIIQ for Android is on its way.
+        Stay tuned for the official Google Play launch.
+      </p>
+
+      <div class="modal-footer">PREDIIQ · PREDICT BETTER. WIN DIFFERENT.</div>
+
+    </div>
+  </div>
+
+  <script>
+    const androidButton = document.getElementById('androidDownload');
+    const modal = document.getElementById('androidModal');
+    const closeButton = document.getElementById('closeModal');
+
+    function openAndroidModal(event) {
+      event.preventDefault();
+      modal.classList.add('active');
+      closeButton.focus();
+    }
+
+    function closeAndroidModal() {
+      modal.classList.remove('active');
+      androidButton.focus();
+    }
+
+    androidButton.addEventListener('click', openAndroidModal);
+    closeButton.addEventListener('click', closeAndroidModal);
+
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeAndroidModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('active')) {
+        closeAndroidModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
